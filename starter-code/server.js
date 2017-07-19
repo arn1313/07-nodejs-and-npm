@@ -16,7 +16,8 @@ app.use(express.static('./public'));
 // DONE: (STRETCH) Write a new route that will handle a request and send the new.html file back to the user
 app.get('/new', function(request, response) {
   console.log('request sent');
-  response.sendFile('new.html' + {root: '.'},'You did the thing with the thing in the thing to the thing from the thing, congratulations!');
+  response.sendFile('./new.html', {root: './public'});
+  // response.send('.send IS FOR STRINGS ONLY');
 });
 
 app.post('/articles', bodyParser, function(request, response) {
